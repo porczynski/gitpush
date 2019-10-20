@@ -1,7 +1,12 @@
 # gitpush
 one line quick commit, comment and push to github
 
-place gitpush file in your project main directory
-command ./gitpush every time when you want commit, comment and push to github your project
+### Usage:
+copy **gitpush** file in your project main directory
+type
+```shell
+./gitpush
+```
+every time when you want to commit, comment and push directly to the master branch.
 
-Tested on Debian Linux only
+Used and tested on Debian Linux only
