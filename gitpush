@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# one line quick commit, comment and push to github
+# author: Dariusz Porczyński
+
+repo=echo ${PWD/*\//}
+echo -e "\e[32mCurrent PROJECT repo:\e[33m" $repo "\e[32m changes: \e[0m"
+git status
+echo -e "\e[95m type your comment below...\e[0m"
+read comment
+
+git add .
+git commit -m "$comment"
+git remote rm upstream
+git remote add upstream git@github.com:system66/busy4.me
+
+git push -u upstream master
