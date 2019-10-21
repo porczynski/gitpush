@@ -2,15 +2,21 @@
 # one line quick commit, comment and push to github
 # author: Dariusz Porczyński
 
+cat ./.git/config >> /tmp/gitconfig
+sed -i 's/*github//g' /tmp/gitconfig
+cat /tmp/gitconfig
+
 repo=echo ${PWD/*\//}
-echo -e "\e[32mCurrent PROJECT repo:\e[33m" $repo "\e[32m changes: \e[0m"
+ory=upstream
+branch=master
+echo -e "\e[32mCurrent repository:\e[33m" $repo "\e[32m changes: \e[0m"
 git status
 echo -e "\e[95m type your comment below...\e[0m"
 read comment
 
 git add .
 git commit -m "$comment"
-git remote rm upstream
-git remote add upstream git@github.com:system66/busy4.me
+git remote rm $ory
+git remote add $ory git@github.com:system66/$repo
 
 git push -u upstream master
