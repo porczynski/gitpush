@@ -17,7 +17,7 @@ if [ -z "$guser" ]
 then
   guser=$gu
 fi
-echo -e "\e[30m\e[42m OK \e[95m Github user name is:\e[33m"$guser"\e[0m"
+echo -e "\e[30m\e[42m OK \e[0m\e[95m Github user name is:\e[33m"$guser"\e[0m"
 
 re="origin"
 echo -e "\e[95m Press ENTER if remote name is correct or type correct one\n\
@@ -28,7 +28,7 @@ if [ -z "$remote" ]
 then
   remote=$re
 fi
-echo -e "\e[30m\e[42m OK \e[95m remote name is:\e[33m"$remote"\e[0m"
+echo -e "\e[30m\e[42m OK \e[0m\e[95m remote name is:\e[33m"$remote"\e[0m"
 
 git add .
 
