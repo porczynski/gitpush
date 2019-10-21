@@ -2,43 +2,43 @@
 # one line quick commit, comment and push to github
 # author: Dariusz Porczyński
 
-rm /tmp/gitconfig
-cat ./.git/config
-cat ./.git/config > /tmp/gitconfig
-sed 's/^.*github/github/' /tmp/gitconfig
-echo -e "\e[33m-----------------------\e[0m"
-cat /tmp/gitconfig
+#rm /tmp/gitconfig
+#cat ./.git/config
+#cat ./.git/config > /tmp/gitconfig
+#sed 's/^.*github/github/' /tmp/gitconfig
+#echo -e "\e[33m-----------------------\e[0m"
+#cat /tmp/gitconfig
 
-guser=$(echo $(cat ./.git/config) | sed 's/^.*github.com://' | sed 's/\/.*//')
+gu=$(echo $(cat ./.git/config) | sed 's/^.*github.com\///' | sed 's/\/.*//')
+echo -e "\e[95m Press ENTER if username is correct or type correct one\n\
+Current username: \e[33m"$gu"\e[0m"
 
-echo -e "\e[95m type your github user:\e[0m"
 read guser
 if [ -z "$guser" ]
 then
-  guser="origin"
+  guser=$gu
 fi
 
-ori="origin"
+re="origin"
+echo -e "\e[95m Press ENTER if remote name is correct or type correct one\n\
+Current remote name: \e[33m"$re"\e[0m"
+read remote
 
-echo -e "\e[95m type your github origin below, eg.\"origin\" or \"upstream\"\n
-leave empty if it is \"orygin\"\e[0m"
-read ori
-
-if [ -z "$ori" ]
+if [ -z "$remote" ]
 then
-  ori="origin"
+  remote=$re
 fi
 
 repo=echo ${PWD/*\//}
 branch=master
-echo -e "\e[32mCurrent repository:\e[33m" $repo "\e[32m changes: \e[0m"
+echo -e "\e[32mCurrent repository:\e[33m"$repo"\e[32m, branch:\e[33m"$branch"\e[32m, changes: \e[0m"
 git status
 echo -e "\e[95m type your comment below...\e[0m"
 read comment
 
 git add .
 git commit -m "$comment"
-git remote rm $ori
-git remote add $ori git@github.com:system66/$repo
+git remote rm $remote
+git remote add $remote git@github.com:$guser/$repo
 
 git push -u upstream master
