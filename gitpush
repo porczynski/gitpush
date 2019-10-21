@@ -2,7 +2,16 @@
 # one line quick commit, comment and push to github
 # author: Dariusz Porczyński
 
-gu=$(echo $(cat ./.git/config) | sed 's/^.*github.com\///' | sed 's/\/.*//')
+gu=$(echo $(cat ./.git/config))
+case $gu in
+  *github.com:* )
+  gu=$(echo $(cat ./.git/config) | sed 's/^.*github.com://' | sed 's/\/.*//')
+  ;;
+  *github.com/* )
+  gu=$(echo $(cat ./.git/config) | sed 's/^.*github.com\///' | sed 's/\/.*//')
+  ;;
+esac
+
 echo -e "\e[95m Press ENTER if username is correct or type correct one\n\
 Current username: \e[33m"$gu"\e[0m"
 read guser
