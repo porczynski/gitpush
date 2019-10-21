@@ -47,3 +47,4 @@ git remote rm $remote
 git remote add $remote git@github.com:$guser/$repo
 
 git push -u $remote master
+echo -e "\e[30m\e[42m all done \e[0m bye!"
