@@ -2,12 +2,34 @@
 # one line quick commit, comment and push to github
 # author: Dariusz Porczyński
 
-cat ./.git/config >> /tmp/gitconfig
-sed -i 's/*github//g' /tmp/gitconfig
+rm /tmp/gitconfig
+cat ./.git/config
+cat ./.git/config > /tmp/gitconfig
+sed 's/^.*github/github/' /tmp/gitconfig
+echo -e "\e[33m-----------------------\e[0m"
 cat /tmp/gitconfig
 
+guser=$(echo $(cat ./.git/config) | sed 's/^.*github.com://' | sed 's/\/.*//')
+
+echo -e "\e[95m type your github user:\e[0m"
+read guser
+if [ -z "$guser" ]
+then
+  guser="origin"
+fi
+
+ori="origin"
+
+echo -e "\e[95m type your github origin below, eg.\"origin\" or \"upstream\"\n
+leave empty if it is \"orygin\"\e[0m"
+read ori
+
+if [ -z "$ori" ]
+then
+  ori="origin"
+fi
+
 repo=echo ${PWD/*\//}
-ory=upstream
 branch=master
 echo -e "\e[32mCurrent repository:\e[33m" $repo "\e[32m changes: \e[0m"
 git status
@@ -16,7 +38,7 @@ read comment
 
 git add .
 git commit -m "$comment"
-git remote rm $ory
-git remote add $ory git@github.com:system66/$repo
+git remote rm $ori
+git remote add $ori git@github.com:system66/$repo
 
 git push -u upstream master
