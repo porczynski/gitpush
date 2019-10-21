@@ -29,14 +29,15 @@ then
   remote=$re
 fi
 
-repo=echo ${PWD/*\//}
+git add .
+
+repo=$(echo ${PWD/*\//})
 branch=master
 echo -e "\e[32mCurrent repository:\e[33m"$repo"\e[32m, branch:\e[33m"$branch"\e[32m, changes: \e[0m"
 git status
 echo -e "\e[95m type your comment below...\e[0m"
 read comment
 
-git add .
 git commit -m "$comment"
 git remote rm $remote
 git remote add $remote git@github.com:$guser/$repo
