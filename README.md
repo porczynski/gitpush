@@ -2,7 +2,7 @@
 linux one command line quick commit, comment and push directly to the Github.com master branch
 
 ### Usage:
-copy **gitpush** file into your project main directory and run after your work
+copy *gitpush* file into your project main directory and run after your work
 ```shell
 ./gitpush
 ```
