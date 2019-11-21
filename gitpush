@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # one command line quick commit, comment and push directly to the Github.com master branch
 # author: Dariusz Porczyński
+#source ../lib/emoji-ico-01-people
+#source ../lib/emoji-ico-02-nature
+#source ../lib/emoji-ico-03-objets
+#source ../lib/emoji-ico-04-places
+#source ../lib/emoji-ico-05-symbols
+shufla=$(shuf -n 1  ./lib/emoji-ico-06-github)
 
 gu=$(echo $(cat ./.git/config))
 case $gu in
@@ -42,7 +48,7 @@ git status
 echo -e "\e[95m and type your comment below ...\e[0m"
 read comment
 
-git commit -m "$comment"
+git commit -m "$shufla $comment"
 git remote rm $remote
 git remote add $remote git@github.com:$guser/$repo
 
