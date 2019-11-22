@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+shufla=$(shuf -n1  ./lib/emoji-ico-01-people)
+echo $shufla
