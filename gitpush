@@ -7,10 +7,9 @@
 #source ../lib/emoji-ico-04-places
 #source ../lib/emoji-ico-05-symbols
 
-# check if $emoji variable is not set, then set $shufla
-if [ -z "$emoji" ]; then
+emoji_select () {
   shufla=$(shuf -n 1  ./lib/emoji-ico-06-github)
-fi
+}
 
 username_get () {
   gu=$(echo $(cat ./.git/config))
@@ -68,13 +67,13 @@ git_push () {
 case $1 in
   --no-emoji|-ne)
   echo -e "===== run with no adding emoji ====="
-  emoji=1
   username_get
   remote_get
   git_push
   ;;
   '')
-  echo -e "===== default run with no options ====="
+  echo -e "===== default run with no options, random emoji will be in comment :) ====="
+  emoji_select
   username_get
   remote_get
   git_push
