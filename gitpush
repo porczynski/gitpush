@@ -91,6 +91,42 @@ github_emoji_select () {
   emoji=${github_emoji[$RANDOM % ${#github_emoji[@]}]}
 }
 
+people_emoji_select (){
+  people_emoji=(
+  "😄"
+  "😆"
+  "😊"
+  "😃"
+  "☺️"
+  "😏"
+  "😍"
+  "😘"
+  "😚"
+  "😳"
+  "😌"
+  "😆"
+  "😁"
+  "😉"
+  "😜"
+  "😝"
+  "😀"
+  "😗"
+  "😙"
+  "😛"
+  "😴"
+  "😟"
+  "😦"
+  "😧"
+  "😮"
+  "😬"
+  "😕"
+  "😯"
+  "😑"
+  )
+  RANDOM=$$$(date +%s)
+  emoji=${people_emoji[$RANDOM % ${#people_emoji[@]}]}
+}
+
 case $1 in
   --no-emoji|-ne)
   echo -e "===== run with no emoji added ====="
@@ -100,7 +136,7 @@ case $1 in
   ;;
   '')
   echo -e "===== default run with no options, random emoji will be in comment :) ====="
-  github_emoji_select
+  people_emoji_select
   username_get
   remote_get
   git_push
