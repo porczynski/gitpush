@@ -65,7 +65,8 @@ git_push () {
 }
 
 github_emoji_select () {
-  github_emoji=(":atom:"
+  github_emoji=(
+  ":atom:"
   ":basecamp:"
   ":basecampy:"
   ":bowtie:"
