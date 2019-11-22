@@ -65,28 +65,10 @@ git_push () {
 }
 
 github_emoji_select () {
-  github_emoji=(
-  ":atom:"
-  ":basecamp:"
-  ":basecampy:"
-  ":bowtie:"
-  ":electron:"
-  ":feelsgood:"
-  ":finnadie:"
-  ":goberserk:"
-  ":godmode:"
-  ":hurtrealbad:"
-  ":neckbeard:"
-  ":octocat:"
-  ":rage1:"
-  ":rage2:"
-  ":rage3:"
-  ":rage4:"
-  ":shipit:"
-  ":squirrel:"
-  ":suspect:"
-  ":trollface:"
-  )
+  github_emoji=(":atom:" ":basecamp:" ":basecampy:" ":bowtie:" ":electron:" ":feelsgood:"
+  ":finnadie:" ":goberserk:" ":godmode:" ":hurtrealbad:" ":neckbeard:" ":octocat:"
+  ":rage1:" ":rage2:" ":rage3:" ":rage4:" ":shipit:" ":squirrel:" ":suspect:"
+  ":trollface:")
   RANDOM=$$$(date +%s)
   emoji=${github_emoji[$RANDOM % ${#github_emoji[@]}]}
 }
