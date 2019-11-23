@@ -27,6 +27,8 @@ places
 symbols
 )
 ```
+category "github"  
+:atom: :basecamp: :basecampy: :bowtie: :electron: :feelsgood: :finnadie: :goberserk: :godmode: :hurtrealbad: :neckbeard: :octocat: :rage1: :rage2: :rage3: :rage4: :shipit: :squirrel: :suspect: :trollface:"
 
 For more fun 😊 _gitpush_ places random emoji in the comment.  
 
