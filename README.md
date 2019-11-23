@@ -19,16 +19,22 @@ if you want select specific emoji category:
 
 ```shell
 ./gitpush --emoji-category=category or ./gitpush -ec=category
-categories_list=(
-github
-people
-objects
-places
-symbols
-)
 ```
-category "github"  
-:atom: :basecamp: :basecampy: :bowtie: :electron: :feelsgood: :finnadie: :goberserk: :godmode: :hurtrealbad: :neckbeard: :octocat: :rage1: :rage2: :rage3: :rage4: :shipit: :squirrel: :suspect: :trollface:"
+Available categories:  
+##### _github_  
+### :atom: :basecamp: :basecampy: :bowtie: :electron: :feelsgood: :finnadie: :goberserk: :godmode: :hurtrealbad: :neckbeard: :octocat: :rage1: :rage2: :rage3: :rage4: :shipit: :squirrel: :suspect: :trollface:"
+
+##### _people_
+### 😄😆😊😃☺️😏😍😘😚😳😌😆😁😉😜😝😀😗😙😛😴😟😦😧😮😬😕😯😑
+##### _nature_
+### ☀️☔️☁️❄️⛄️⚡️🌀🌁🌊🐱🐶🐭🐹🐰🐺🐸🐯🐨🐻🐷🐽
+##### _objects_
+### "🎍💝🎎🎒🎓🎏🎆🎇🎐🎑🎃👻🎅🎄🎁🔔
+##### _places_
+### 🏠🏡🏫🏢🏣🏥🏦🏪🏩🏨💒⛪️
+##### _symbols_
+### 💲©️®️™️❌❗️‼️⁉️⭕️✖️➕➖➗💮💯✔️☑️🔘🔗➰〰️〽️🔱✅🔲🔳⚫️⚪️🔴🔵🔷🔶🔹🔸🔺🔻  
+
 
 For more fun 😊 _gitpush_ places random emoji in the comment.  
 
