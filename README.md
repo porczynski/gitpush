@@ -12,7 +12,20 @@ every time when you want to commit, comment and push directly to the master bran
 - or with no emoji 😞 , type:
 
 ```shell
-./gitpush --no-emoji
+./gitpush --no-emoji or ./gitpush -ne
+```
+
+if you want select specific emoji category:
+
+```shell
+./gitpush --emoji-category=category or ./gitpush -ec=category
+categories_list=(
+github
+people
+objects
+places
+symbols
+)
 ```
 
 For more fun 😊 _gitpush_ places random emoji in the comment.  
