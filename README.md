@@ -38,4 +38,12 @@ Available categories:
 
 For more fun 😊 _gitpush_ places random emoji in the comment.  
 
-Used and tested on Debian Linux only
+✔️ Used and tested on Debian Linux only  
+☑️ Should work in any linux distribution with bash shell
+
+TO DO list:
+- add specific emoji as option value
+- emoji random place in comment
+- add all emojis with shortcodes
+- add options to push to other branches
+- tests
